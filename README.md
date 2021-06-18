@@ -1,2 +1,2 @@
 ## Portfolio
-Todos meus projetos referentes aos meus estudos em Desenvolvimento
+Todos meus projetos derivados dos meus estudos em Desenvolvimento
