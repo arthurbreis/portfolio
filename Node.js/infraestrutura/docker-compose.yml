@@ -1,7 +1,7 @@
 version: '3'
 services:
   mysqlsrv:
-    image: mysql:5.7.31
+    image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: "1921681254"
       MYSQL_DATABASE: "project01"
