@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: pod-1
   labels:
-    name: pod-1
+    app: primeiro-pod
 spec:
   containers:
   - name: container-pod-1
