@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysqlsrv:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "1921681254"
+      MYSQL_DATABASE: "project01"
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/arthur/mysql:/var/lib/mysql
