@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysqlsrv:
+    image: mysql:latest
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_PASS
+      - MYSQL_DATABASE=$DB_NAME
+    ports:
+      - "$DB_PORT:$DB_PORT"
+    volumes:
+      - /home/arthur/mysql:/var/lib/mysql
+
+  node:
+    depends_on:
+    - "mysqlsrv"
+    build:
+      dockerfile: ./Dockerfile_node
+      context: .
+    env_file: ./.env
+    image: arthurreis/app-node1.8
+    container_name: node
+    ports:
+      - $port:$port
+    environment:
+    - DB_HOST=$DB_HOST
+    - DB_PORT=$DB_PORT
+    - DB_USER=$DB_USER
+    - DB_PASS=$DB_PASS
+    - DB_NAME=$DB_NAME

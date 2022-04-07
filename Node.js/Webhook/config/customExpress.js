@@ -4,7 +4,7 @@ const express = require('express')
 const consign = require('consign')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
+
 
 // config modulo consign para rotas
 

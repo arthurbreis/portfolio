@@ -1,4 +1,4 @@
-const conection = require('../infraestrutura/conection')
+const conection = require('../config/conection')
 
 class Webhook {
     adiciona(webhook){
