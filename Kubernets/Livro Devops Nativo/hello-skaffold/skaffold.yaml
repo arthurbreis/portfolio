@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta24
+kind: Config
+build:
+  artifacts:
+    - image: skaffold-demo
+deploy:
+  helm:
+    releases:
+      - name: demo
+        chartPath: ./k8s/demo
+        namespace: demo
+        artifactOverrides:
+          image: skaffold-demo
