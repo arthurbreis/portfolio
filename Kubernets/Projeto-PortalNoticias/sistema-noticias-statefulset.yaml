@@ -32,7 +32,14 @@ spec:
             claimName: imagens-pvc
         - name: sessao
           persistentVolumeClaim:
-            claimName: sessao-pvc              
+            claimName: sessao-pvc    
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 80
+        periodSeconds: 10
+        failureThreshold: 3
+        initialDelaySeconds: 20                
   replicas: 1
   selector:
     matchLabels:
