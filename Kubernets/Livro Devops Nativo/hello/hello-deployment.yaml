@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-demo
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: hello-demo
+      labels:
+        app: hello-demo
+    spec: 
+      containers: 
+        - name: hello-container
+          image: arthurreis/myhello:latest
+          ports: 
+            - containerPort: 8888
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+  selector:
+    matchLabels:
+      app: hello-demo
+
