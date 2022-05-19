@@ -1,0 +1,16 @@
+---
+- name: 'Instala pacotes de dependencia do sistema operacional'
+  apt:
+    update_cache: yes #atualizando o package list
+    cache_valid_time: 3600 #1 hora
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  with_items:
+    - php5
+    - apache2
+    - libapache2-mod-php5
+    - php5-gd
+    - libssh2-php
+    - php5-mcrypt
+    - php5-mysql
