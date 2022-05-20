@@ -1,1 +1,0 @@
-{"virtualbox":{"/ssh-keys":{"guestpath":"/ssh-keys","hostpath":"/home/arthur/Vagrant/Ansible/ssh-keys","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/arthur/Vagrant/Ansible","disabled":false,"__vagrantfile":true}}}
