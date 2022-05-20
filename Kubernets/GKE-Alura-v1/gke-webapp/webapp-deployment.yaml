@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: gcr.io/static-bond-350601/webapp
+        image: gcr.io/static-bond-350601/webapp:v2
         ports:
         - containerPort: 5000
