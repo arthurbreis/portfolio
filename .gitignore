@@ -1,2 +1,4 @@
 .ssh-keys/
 .vagrant/
+.pub
+.key

@@ -1,8 +1,0 @@
----
-- hosts: database
-  roles:
-    - mysql
-
-- hosts: wordpress
-  roles:
-    - wordpress
