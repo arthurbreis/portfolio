@@ -1,0 +1,5 @@
+---
+- name: Create a URL shortcut for the Ansible website
+  community.windows.win_shortcut:
+    src: https://ansible.com/
+    dest: '%Public%\Desktop\Ansible website.url'

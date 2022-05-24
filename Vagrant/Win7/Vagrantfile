@@ -1,4 +1,6 @@
   Vagrant.configure("2") do |config|
   config.vm.box = "opensky/windows-7-professional-sp1-x64"
-  config.vm.box_version = "0.1.0"
+  config.vm.network "public_network", 
+  use_dhcp_assigned_default_route: true, 
+  bridge: "wlp3s0b1"
 end
