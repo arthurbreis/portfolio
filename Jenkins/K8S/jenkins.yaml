@@ -1,20 +1,21 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: jenkins
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: jenkins
   template:
     metadata:
+      name: jenkins
       labels:
         app: jenkins
     spec:
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts-jdk11
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -22,4 +23,10 @@ spec:
           mountPath: /var/jenkins_home
       volumes:
       - name: jenkins-home
-        emptyDir: { }
+        persistentVolumeClaim:
+          claimName: jenkins-pvc
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jenkins
+  serviceName: jenkins

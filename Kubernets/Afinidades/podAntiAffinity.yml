@@ -1,0 +1,18 @@
+#pod app:server e outro com rótulo app:cache no mesmo nó
+#nenhum Pod com rótulo app:server pode ser escalonado em um nó que já tenha um Pod app:server em execução
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server
+labels:
+  app: server
+  spec:
+  affinity:
+    podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution: 
+    labelSelector:
+      - matchExpressions:
+      - key: app
+        operator: In
+        values: ["server"]
+        topologyKey: kubernetes.io/hostname
