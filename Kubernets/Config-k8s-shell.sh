@@ -39,6 +39,6 @@ alias kdns='kubectl describe namespaces'
 alias krmns='kubectl delete namespaces'
 
 source <(kubectl completion bash)
+EQF
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 
-EQF
