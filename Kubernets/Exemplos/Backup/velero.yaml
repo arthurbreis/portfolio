@@ -1,0 +1,12 @@
+# Eis um exemplo que configura o Velero para fazer backup no bucket demo-backup
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: default
+namespace: velero
+spec:
+  provider: aws
+  objectStorage:
+  bucket: demo-backup
+  config:
+  region: us-east-1

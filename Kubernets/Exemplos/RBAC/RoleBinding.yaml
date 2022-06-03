@@ -1,0 +1,14 @@
+# concede ao usuário teste o perfil edit somente no namespace demo : 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: teste-edit
+  namespace: demo
+subjects:
+- kind: User
+  name: teste
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
