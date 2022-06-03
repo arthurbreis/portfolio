@@ -17,10 +17,6 @@ spec:
       containers:
         - image: mysql:5.6
           name: mysql
-          resources:
-            limits:
-              cpu: "300m"
-              memory: "1000mi"
           env:
             - name: MYSQL_DATABASE
               value: wordpress
