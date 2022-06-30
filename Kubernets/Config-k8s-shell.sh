@@ -40,14 +40,6 @@ alias krmns='kubectl delete namespaces'
 
 source <(kubectl completion bash)
 
-#GLOBO
-
-alias on01='ssh arthur.reis_ntconsult@BRM-SP-PROD-ON-1.oci.globoi.com'
-alias on02='ssh arthur.reis_ntconsult@BRM-SP-PROD-ON-2.oci.globoi.com'
-alias on03='ssh arthur.reis_ntconsult@BRM-SP-PROD-ON-3.oci.globoi.com'
-alias bt01='ssh arthur.reis_ntconsult@BRM-SP-PROD-BT-1.oci.globoi.com'
-alias bt02='ssh arthur.reis_ntconsult@BRM-SP-PROD-BT-2.oci.globoi.com'
-
 EQF
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 
