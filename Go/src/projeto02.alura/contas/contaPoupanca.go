@@ -2,14 +2,14 @@ package contas
 
 import "projeto02.alura/cliente"
 
-type ContaCorrente struct {
+type ContaPoupanca struct {
 	Titular    cliente.Titular
 	NumAgencia int
 	NumConta   int
 	Saldo      float64
 }
 
-func (c *ContaCorrente) Sacar(valorSaque float64) string {
+func (c *ContaPoupanca) Sacar(valorSaque float64) string {
 	saqueTrue := valorSaque > 0 && valorSaque <= c.Saldo
 	if saqueTrue {
 		c.Saldo -= valorSaque
@@ -19,7 +19,7 @@ func (c *ContaCorrente) Sacar(valorSaque float64) string {
 	}
 }
 
-func (c *ContaCorrente) Depositar(valorDeposito float64) (string, float64) {
+func (c *ContaPoupanca) Depositar(valorDeposito float64) (string, float64) {
 	if valorDeposito > 0 {
 		c.Saldo += valorDeposito
 		return "Deposito efetuado", c.Saldo
@@ -28,7 +28,7 @@ func (c *ContaCorrente) Depositar(valorDeposito float64) (string, float64) {
 	}
 }
 
-func (c *ContaCorrente) Transferir(valorTransferir float64, contaDestino *ContaCorrente) bool {
+func (c *ContaPoupanca) Transferir(valorTransferir float64, contaDestino *ContaPoupanca) bool {
 	if valorTransferir < c.Saldo && valorTransferir > 0 {
 		c.Saldo -= valorTransferir
 		contaDestino.Depositar(valorTransferir)
