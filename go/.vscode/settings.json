@@ -1,5 +1,5 @@
 {
     "go.toolsEnvVars": {
-        "GOPATH": "/home/arthur/portfolio/Go"
+        "GOPATH": "/home/arthur/portfolio/go"
     }
 }
