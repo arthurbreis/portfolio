@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"html/template"
 	"net/http"
 
@@ -15,18 +16,50 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	produtos := []Produto{
-		{"Camiseta", "Azul, bem bonita", 39, 5},
-		{"Tenis", "Confortável", 89, 3},
-		{"Fone", "Muito bom", 59, 2},
-		{"Produto novo", "Muito legal", 1.99, 1},
+	db := conectaBd()
+
+	selectAll, err := db.Query("select * from produtos")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	p := Produto{}
+	produtos := []Produto{}
+
+	for selectAll.Next() {
+		var id, quantidade int
+		var nome, descricao string
+		var preco float64
+
+		err = selectAll.Scan(&id, &nome, &descricao, &preco, &quantidade)
+		if err != nil {
+			panic(err.Error())
+		}
+
+		p.Nome = nome
+		p.Descricao = descricao
+		p.Preco = preco
+		p.Quantidade = quantidade
+
+		produtos = append(produtos, p)
+
 	}
 
 	templates.ExecuteTemplate(w, "Index", produtos)
+	defer db.Close()
 }
 
 type Produto struct {
 	Nome, Descricao string
 	Preco           float64
-	Quantidade      int
+	Quantidade, id  int
+}
+
+func conectaBd() *sql.DB {
+	conexao := "user=mypost dbname=postgres password=1921681254 host=localhost sslmode=disable"
+	db, err := sql.Open("postgres", conexao)
+	if err != nil {
+		panic(err.Error())
+	}
+	return db
 }
