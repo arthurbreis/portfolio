@@ -5,10 +5,7 @@ public class CriaConta {
         arthur.setNome("Arthur");
         arthur.setCpf ("1234567890");
         //DEFINE CONTA 
-        Conta primeiraConta = new Conta();
-        primeiraConta.deposita(200);
-        primeiraConta.setAgencia(1234);
-        primeiraConta.setNumero(12);
+        Conta primeiraConta = new Conta(1221, 312321);
         //SETA TITULAR
         primeiraConta.setTitular(arthur);
 
@@ -24,7 +21,7 @@ public class CriaConta {
 
         System.out.println(primeiraConta.getSaldo());
 
-        Conta segundaConta = new Conta();
+        Conta segundaConta = new Conta(1221, 3123213);
         segundaConta.deposita(200);
 
         if (segundaConta.transfere(150, primeiraConta)) {
@@ -35,5 +32,6 @@ public class CriaConta {
 
         System.out.println(primeiraConta.getSaldo());
         System.out.println(segundaConta.getSaldo());
+        System.out.println(Conta.getTotal());
     }
 }
