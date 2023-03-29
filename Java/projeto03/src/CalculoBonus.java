@@ -1,10 +1,10 @@
 public class CalculoBonus {
-
     private double soma;
-    
+    private double bonus;
+
     public void registra(Funcionario f) {
-        double boni = f.getBonificacao();
-        this.soma = this.soma + boni;
+        bonus = f.getBonificacao();
+        this.soma = this.soma + bonus;
     }
 
     public double getSoma() {

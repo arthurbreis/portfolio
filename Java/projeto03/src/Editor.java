@@ -1,5 +1,6 @@
 public class Editor extends Funcionario {
     private int senha;
+    private double bonus;
 
     public boolean autentica(int senha) {
 
@@ -11,6 +12,12 @@ public class Editor extends Funcionario {
 
     public double getBonificacao() {
         System.out.println("Calculando bonus editor...");
-        return super.getBonificacao() + 100;
+        bonus = super.getSalario() * 0.1;
+        return bonus;
     }
+
+    public double getBonus() {
+        return bonus;
+    }
+
 }

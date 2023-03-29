@@ -1,5 +1,6 @@
 public class Gerente extends Funcionario {
     private int senha;
+    private double bonus;
 
     public boolean autentica(int senha) {
 
@@ -11,10 +12,15 @@ public class Gerente extends Funcionario {
 
     public double getBonificacao() {
         System.out.println("calculando bonus gerente...");
-        return super.getBonificacao() + super.getSalario();
+        bonus = super.getSalario() * 0.5;
+        return bonus;
     }
 
     public void setSenha(int senha) {
         this.senha = senha;
+    }
+
+    public double getBonus(){
+        return this.bonus;
     }
 }
