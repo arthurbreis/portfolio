@@ -1,4 +1,7 @@
-public class Filme {
+package models;
+
+public class Titulo {
+
     private String nome;
     private int anoLancamento, totalAvaliacoes, duracao;
     private boolean incluidoNoPlano;
