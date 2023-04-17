@@ -6,9 +6,7 @@ import calculos.*;
 
 public class Main {
     public static void main(String[] args) {
-        Filme filme01 = new Filme();
-        filme01.setNome("Top gun");
-        filme01.setAnoLancamento(2022);
+        Filme filme01 = new Filme("Top gun", 2022);
         filme01.setDuracao(120);
 
         filme01.fichaTecnica();
@@ -16,9 +14,7 @@ public class Main {
         filme01.avalia(10);
         filme01.avalia(20);
 
-        Filme filme02 = new Filme();
-        filme02.setNome("The DaVinci Code");
-        filme02.setAnoLancamento(2015);
+        Filme filme02 = new Filme("The DaVinci Code", 2015);
         filme02.setDuracao(120);
 
         filme02.fichaTecnica();
@@ -30,9 +26,7 @@ public class Main {
 
         System.out.println(filme01.mediaAvaliacoes());
 
-        Serie serie01 = new Serie();
-        serie01.setNome("YOU");
-        serie01.setAnoLancamento(2020);
+        Serie serie01 = new Serie("YOU", 2020);
         serie01.setEpPorTemporadas(5);
         serie01.setTemporadas(5);
         serie01.setMinPorEps(60);
