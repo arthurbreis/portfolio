@@ -74,4 +74,9 @@ public class Titulo {
         this.somaAvaliacoes = somaAvaliacoes;
     }
 
+    @Override
+    public String toString() {
+        return "Titulo: " + nome + " (" + anoLancamento + ")";
+    }
+
 }
