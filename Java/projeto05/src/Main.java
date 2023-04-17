@@ -41,12 +41,16 @@ public class Main {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(filme01);
 
-        ArrayList<Filme> filmes = new ArrayList<>();
-        filmes.add(filme01);
-        filmes.add(filme02);
-        System.out.println("Tamanho da lista: " + filmes.size());
-        System.out.println("Primero da lista: " + filmes.get(0).getNome());
+        ArrayList<Titulo> Lista = new ArrayList<>();
+        Lista.add(filme01);
+        Lista.add(filme02);
+        Lista.add(serie01);
+        System.out.println("Tamanho da lista: " + Lista.size());
+        System.out.println("Primero da lista: " + Lista.get(0).getNome());
 
+        for (Titulo item : Lista) {
+            System.out.println(item);
+        }
 
 
     }
