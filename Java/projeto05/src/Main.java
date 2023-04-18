@@ -2,6 +2,7 @@ import models.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import calculos.*;
 
@@ -57,6 +58,9 @@ public class Main {
 
         System.out.println("Lista ordenada por nome: " + Lista);
 
+        Lista.sort(Comparator.comparing(Titulo::getAnoLancamento));
+
+        System.out.println("Lista ordenada por ano: " + Lista);
 
     }
 }
