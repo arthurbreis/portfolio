@@ -1,6 +1,7 @@
 import models.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import calculos.*;
 
@@ -51,6 +52,10 @@ public class Main {
         for (Titulo item : Lista) {
             System.out.println(item);
         }
+
+        Collections.sort(Lista);
+
+        System.out.println("Lista ordenada por nome: " + Lista);
 
 
     }

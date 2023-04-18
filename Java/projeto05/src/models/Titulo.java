@@ -1,6 +1,6 @@
 package models;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
 
     private String nome;
     private int anoLancamento, totalAvaliacoes, duracao;
@@ -77,6 +77,11 @@ public class Titulo {
     @Override
     public String toString() {
         return "Titulo: " + nome + " (" + anoLancamento + ")";
+    }
+
+    @Override
+    public int compareTo(Titulo o) {
+        return this.getNome().compareTo(o.getNome());
     }
 
 }
