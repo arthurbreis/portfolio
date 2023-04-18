@@ -43,24 +43,24 @@ public class Main {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(filme01);
 
-        ArrayList<Titulo> Lista = new ArrayList<>();
-        Lista.add(filme01);
-        Lista.add(filme02);
-        Lista.add(serie01);
-        System.out.println("Tamanho da lista: " + Lista.size());
-        System.out.println("Primero da lista: " + Lista.get(0).getNome());
+        ArrayList<Titulo> lista = new ArrayList<>();
+        lista.add(filme01);
+        lista.add(filme02);
+        lista.add(serie01);
+        System.out.println("Tamanho da lista: " + lista.size());
+        System.out.println("Primero da lista: " + lista.get(0).getNome());
 
-        for (Titulo item : Lista) {
+        for (Titulo item : lista) {
             System.out.println(item);
         }
 
-        Collections.sort(Lista);
+        Collections.sort(lista);
 
-        System.out.println("Lista ordenada por nome: " + Lista);
+        System.out.println("Lista ordenada por nome: " + lista);
 
-        Lista.sort(Comparator.comparing(Titulo::getAnoLancamento));
+        lista.sort(Comparator.comparing(Titulo::getAnoLancamento));
 
-        System.out.println("Lista ordenada por ano: " + Lista);
+        System.out.println("Lista ordenada por ano: " + lista);
 
     }
 }
