@@ -1,7 +1,6 @@
 package models;
 
 public class Titulo implements Comparable<Titulo> {
-
     private String nome;
     private int anoLancamento, totalAvaliacoes, duracao;
     private boolean incluidoNoPlano;
@@ -10,6 +9,12 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String nome, int anoLancamento) {
         this.nome = nome;
         this.anoLancamento = anoLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracao = Integer.valueOf(meuTituloOmdb.runtime().substring(0 ,2));
     }
 
     public void fichaTecnica() {
@@ -76,7 +81,7 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "Titulo: " + nome + " (" + anoLancamento + ")";
+        return "Titulo: " + nome + " (" + anoLancamento + ") - " + duracao + "min";
     }
 
     @Override
