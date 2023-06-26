@@ -1,8 +1,8 @@
 package entities;
 
 public class ContaCorrente {
-    private String nomeTitular = null;
-    private int numeroConta = 0;
+    private String nomeTitular;
+    private int numeroConta;
     private double depositoInicial, saldo;
 
     private static final double taxa;
@@ -21,7 +21,6 @@ public class ContaCorrente {
     public ContaCorrente(String nomeTitular, int numeroConta){
         this.nomeTitular = nomeTitular;
         this.numeroConta = numeroConta;
-        this.depositoInicial = depositoInicial;
     }
     public double getSaldo() {
         return saldo;
