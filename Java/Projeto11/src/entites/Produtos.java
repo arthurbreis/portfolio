@@ -1,32 +1,23 @@
 package entites;
 
 public class Produtos {
-    private String nome;
-    private Double preco;
-    private int quantidade;
+    private final String nome;
+    private static Double preco;
+    private static int quantidade;
 
-    public double valorTotalEstoque(){
-
-        return preco*quantidade;
-    }
-    public void addProduto(int quantidade){
-        this.quantidade += quantidade;
-    }
-    public void removeProduto(int quantidade){
-
-        this.quantidade -= quantidade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public Produtos(String nome){
         this.nome = nome;
     }
+    public static double valorTotalEstoque(){
+        return preco*quantidade;
+    }
+    public static void addProduto(int quantidade){
 
-    public Double getPreco() {
-        return preco;
+        Produtos.quantidade += quantidade;
+    }
+    public static void removeProduto(int quantidade){
+
+        Produtos.quantidade -= quantidade;
     }
 
     public void setPreco(Double preco) {

@@ -13,12 +13,13 @@ public class Main {
 	5- Sair
 """);
         Scanner sc = new Scanner(System.in);
-        Produtos produtos = new Produtos();
 
         while(entrada != 5) {
             System.out.println(menu);
             entrada = sc.nextInt();
             sc.nextLine();
+
+
 
             if (entrada < 0 || entrada > 5) {
                 System.out.println("valor inválido, digite novamente");
@@ -26,29 +27,30 @@ public class Main {
                 switch (entrada) {
                     case 1:
                         System.out.println("Nome: ");
-                        produtos.setNome(sc.nextLine());
+                        String nome = sc.nextLine();
+                        Produtos produtos = new Produtos(nome);
 
                         System.out.println("Valor: ");
                         produtos.setPreco(sc.nextDouble());
 
                         System.out.println("Quantidade: ");
                         produtos.setQuantidade(sc.nextInt());
-                        produtos.addProduto(produtos.getQuantidade());
+                        Produtos.addProduto(produtos.getQuantidade());
 
                         System.out.println(produtos);
                         break;
                     case 2:
                         System.out.print("Digite quantidade adicionada ao estoque: ");
-                        produtos.addProduto(sc.nextInt());
-                        System.out.println(produtos);
+                        Produtos.addProduto(sc.nextInt());
+                        System.out.println(Produtos.class);
                         break;
                     case 3:
                         System.out.print("Digite quantidade a ser removida: ");
-                        produtos.removeProduto(sc.nextInt());
-                        System.out.println(produtos);
+                        Produtos.removeProduto(sc.nextInt());
+                        System.out.println(Produtos.class);
                         break;
                     case 4:
-                        System.out.println(produtos.valorTotalEstoque());
+                        System.out.println(Produtos.valorTotalEstoque());
                         break;
                     default:
                         System.out.println("bye...");
@@ -56,6 +58,7 @@ public class Main {
                 }
             }
         }
+        sc.close();
 
     }
 }
