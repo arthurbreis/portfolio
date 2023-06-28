@@ -12,7 +12,7 @@ public class Main {
 	3- Depositar
 	4- Sacar
 	5- Sair
-""");
+    """);
         ContaCorrente contaCorrente = null;
         Scanner sc = new Scanner(System.in);
         while(entrada != 5){
