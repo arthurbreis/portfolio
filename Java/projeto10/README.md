@@ -1,1 +1,0 @@
-## Faça um programa que solicite os dados de 2 triangulos, calcule sua area e no final imprima qual o maior entre eles.
