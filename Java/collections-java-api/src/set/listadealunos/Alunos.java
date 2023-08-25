@@ -10,12 +10,12 @@ public class Alunos implements Comparable<Alunos> {
     }
     private String nome;
     private int matricula;
-    private double nota;
+    private double media;
 
-    public Alunos(String nome, int matricula, double nota) {
+    public Alunos(String nome, int matricula, double media) {
         this.nome = nome;
         this.matricula = matricula;
-        this.nota = nota;
+        this.media = media;
     }
 
     public String getNome() {
@@ -26,8 +26,8 @@ public class Alunos implements Comparable<Alunos> {
         return matricula;
     }
 
-    public double getNota() {
-        return nota;
+    public double getMedia() {
+        return media;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Alunos implements Comparable<Alunos> {
         return "Alunos{" +
                 "nome='" + nome + '\'' +
                 ", matricula=" + matricula +
-                ", nota=" + nota +
+                ", media=" + media +
                 '}';
     }
 

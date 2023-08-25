@@ -9,7 +9,7 @@ public class MainTest {
         cadastroProdutos.adicionaProduto("Produto 3",1L,10d, 2);
         cadastroProdutos.adicionaProduto("Produto 9",9L,  2d, 2);
 
-        System.out.println(cadastroProdutos.exibeProdutos());
+        System.out.println(cadastroProdutos.produtoSet);
 
         System.out.println(cadastroProdutos.exibirProdutosPorNome());
 
