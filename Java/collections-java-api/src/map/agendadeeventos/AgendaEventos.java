@@ -1,7 +1,6 @@
 package map.agendadeeventos;
 
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
