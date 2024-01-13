@@ -4,3 +4,4 @@
 *.key
 go/bin
 go/pkg
+.DS_Store
