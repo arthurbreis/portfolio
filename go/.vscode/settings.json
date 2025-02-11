@@ -1,7 +1,0 @@
-{
-    "go.toolsEnvVars": {
-        "GOMODCACHE": "/home/arthur/portfolio/go/pkg/mod",
-        "GOPATH": "/home/arthur/portfolio/go"
-    },
-    "git.ignoreLimitWarning": true
-}
