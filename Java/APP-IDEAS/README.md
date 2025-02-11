@@ -1,1 +1,0 @@
-# forked from florinpop17/app-ideas
